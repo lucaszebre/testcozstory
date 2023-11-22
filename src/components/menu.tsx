@@ -31,9 +31,10 @@ const Menu = (props:{nav:any}) => {
       ]
     
       const callsToAction = [
-        { name: props.nav.data.callstoaction[0]?.name.toString(), href: '#', icon: PlayCircleIcon },
-        { name: props.nav.data.callstoaction[1]?.name.toString(), href: '#', icon: PhoneIcon },
+        { name: props.nav.data.callstoaction[0]?.name[0].text, href: '#', icon: PlayCircleIcon },
+        { name: props.nav.data.callstoaction[1]?.name[0].text, href: '#', icon: PhoneIcon },
       ]
+      
 return (
     <>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={closeMobileMenu}>
@@ -97,7 +98,7 @@ return (
                     </>
                   )}
                 </Disclosure>
-                {props.nav.data.menubar.slice(1).map((m:any,index:number)=>{
+                {props.nav.data.menubar.slice(1).map((m:any)=>{
                   return (
                     <PrismicRichText
                     field={m.name}
