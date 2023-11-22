@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 "use client"
 
 import React from 'react'
@@ -98,20 +99,28 @@ return (
                 </Disclosure>
                 {props.nav.data.menubar.slice(1).map((m:any,index:number)=>{
                   return (
-                    <PrismicNextLink key={index} className="cursor-pointer -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" field={m.link}>
-                    {m.name}
-                  </PrismicNextLink>)
+                    <PrismicRichText
+                    field={m.name}
+                    components={{hyperlink: ({ children }) => (
+                    <a href="#" className="cursor-pointer -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      {children}
+                    </a>
+                    )}}/>
+                  )
                 })}
                 
                 
                 
               </div>
               <div className="py-6">
-                <PrismicNextLink  
-                  className="cursor-pointer -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  field={props.nav.data.linklogin}>
-                      {props.nav.data.login}
-                </PrismicNextLink>
+              <PrismicRichText
+                    field={props.nav.data.login}
+                    components={{hyperlink: ({ children }) => (
+                    <a href="#" className="cursor-pointer -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      {children}
+                    </a>
+                    )}}/>
+                
             </div>
           </div>
         </div>
