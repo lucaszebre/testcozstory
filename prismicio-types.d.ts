@@ -10,51 +10,6 @@ type HomepageDocumentDataSlicesSlice =
   | NewHeroSlice;
 
 /**
- * Item in *Homepage → menubar*
- */
-export interface HomepageDocumentDataMenubarItem {
-  /**
-   * name field in *Homepage → menubar*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.menubar[].name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  name: prismic.RichTextField;
-
-  /**
-   * description field in *Homepage → menubar*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.menubar[].description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * href field in *Homepage → menubar*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.menubar[].href
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  href: prismic.RichTextField;
-
-  /**
-   * icon field in *Homepage → menubar*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.menubar[].icon
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  icon: prismic.RichTextField;
-}
-
-/**
  * Content for Homepage documents
  */
 interface HomepageDocumentData {
@@ -109,38 +64,7 @@ interface HomepageDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  meta_title: prismic.KeyTextField /**
-   * menubar field in *Homepage*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.menubar[]
-   * - **Tab**: nav
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  menubar: prismic.GroupField<Simplify<HomepageDocumentDataMenubarItem>>;
-
-  /**
-   * logo field in *Homepage*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.logo
-   * - **Tab**: nav
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  logo: prismic.LinkToMediaField;
-
-  /**
-   * loginbutton field in *Homepage*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.loginbutton
-   * - **Tab**: nav
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  loginbutton: prismic.LinkField;
+  meta_title: prismic.KeyTextField;
 }
 
 /**
@@ -159,7 +83,225 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument;
+/**
+ * Item in *nav → nav*
+ */
+export interface NavDocumentDataMenubarItem {
+  /**
+   * name field in *nav → nav*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.menubar[].name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+}
+
+/**
+ * Item in *nav → menumobile*
+ */
+export interface NavDocumentDataMenumobileItem {
+  /**
+   * name field in *nav → menumobile*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.menumobile[].name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * description field in *nav → menumobile*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.menumobile[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Item in *nav → callsToAction*
+ */
+export interface NavDocumentDataCallstoactionItem {
+  /**
+   * name field in *nav → callsToAction*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.callstoaction[].name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+}
+
+/**
+ * Item in *nav → products*
+ */
+export interface NavDocumentDataProductsItem {
+  /**
+   * name field in *nav → products*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.products[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * description field in *nav → products*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.products[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Content for nav documents
+ */
+interface NavDocumentData {
+  /**
+   * login field in *nav*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.login
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  login: prismic.RichTextField;
+
+  /**
+   * nav field in *nav*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.menubar[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  menubar: prismic.GroupField<Simplify<NavDocumentDataMenubarItem>>;
+
+  /**
+   * logo field in *nav*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * menumobile field in *nav*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.menumobile[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  menumobile: prismic.GroupField<Simplify<NavDocumentDataMenumobileItem>>;
+
+  /**
+   * demo field in *nav*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.demo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  demo: prismic.KeyTextField;
+
+  /**
+   * sales field in *nav*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.sales
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sales: prismic.KeyTextField;
+
+  /**
+   * spanimage field in *nav*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.spanimage
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  spanimage: prismic.RichTextField;
+
+  /**
+   * spanmenu field in *nav*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.spanmenu
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  spanmenu: prismic.RichTextField;
+
+  /**
+   * spanclosemenu field in *nav*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.spanclosemenu
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  spanclosemenu: prismic.RichTextField;
+
+  /**
+   * callsToAction field in *nav*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.callstoaction[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  callstoaction: prismic.GroupField<Simplify<NavDocumentDataCallstoactionItem>>;
+
+  /**
+   * products field in *nav*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav.products[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  products: prismic.GroupField<Simplify<NavDocumentDataProductsItem>>;
+}
+
+/**
+ * nav document from Prismic
+ *
+ * - **API ID**: `nav`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<NavDocumentData>, "nav", Lang>;
+
+export type AllDocumentTypes = HomepageDocument | NavDocument;
 
 /**
  * Primary content in *ArticlesList → Primary*
@@ -471,7 +613,12 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
-      HomepageDocumentDataMenubarItem,
+      NavDocument,
+      NavDocumentData,
+      NavDocumentDataMenubarItem,
+      NavDocumentDataMenumobileItem,
+      NavDocumentDataCallstoactionItem,
+      NavDocumentDataProductsItem,
       AllDocumentTypes,
       ArticlesListSlice,
       ArticlesListSliceDefaultPrimary,

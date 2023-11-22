@@ -57,68 +57,6 @@
         },
         "type": "Text"
       }
-    },
-    "nav": {
-      "menubar": {
-        "type": "Group",
-        "config": {
-          "label": "menubar",
-          "fields": {
-            "name": {
-              "type": "StructuredText",
-              "config": {
-                "label": "name",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            },
-            "description": {
-              "type": "StructuredText",
-              "config": {
-                "label": "description",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            },
-            "href": {
-              "type": "StructuredText",
-              "config": {
-                "label": "href",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            },
-            "icon": {
-              "type": "StructuredText",
-              "config": {
-                "label": "icon",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            }
-          }
-        }
-      },
-      "logo": {
-        "type": "Link",
-        "config": {
-          "label": "logo",
-          "placeholder": "",
-          "select": "media"
-        }
-      },
-      "loginbutton": {
-        "type": "Link",
-        "config": {
-          "label": "loginbutton",
-          "placeholder": "",
-          "select": null
-        }
-      }
     }
   }
 }
